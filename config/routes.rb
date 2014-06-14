@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
-  resources :bikes
+  resources :bikes do
+    member do
+      put 'grab'
+      put 'drop'
+    end
+  end
 
   resources :users
+  root 'bikes#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -51,6 +51,12 @@ class BikesController < ApplicationController
     end
   end
 
+  def grab
+  end
+
+  def drop
+  end
+
   # DELETE /bikes/1
   # DELETE /bikes/1.json
   def destroy
