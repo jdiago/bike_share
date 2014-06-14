@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Is available:</strong>
+  <%= @bike.is_available %>
+</p>
+
+<p>
+  <strong>Unlock code:</strong>
+  <%= @bike.unlock_code %>
+</p>
+
+<%= link_to 'Edit', edit_bike_path(@bike) %> |
+<%= link_to 'Back', bikes_path %>
