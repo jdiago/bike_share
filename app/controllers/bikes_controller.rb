@@ -1,5 +1,5 @@
 class BikesController < ApplicationController
-  before_action :set_bike, only: [:show, :edit, :update, :destroy]
+  before_action :set_bike, only: [:show, :edit, :update, :grab, :drop, :destroy]
 
   # GET /bikes
   # GET /bikes.json
@@ -52,9 +52,23 @@ class BikesController < ApplicationController
   end
 
   def grab
+    respond_to do |format|
+      if @bike.grab
+        format.html { redirect_to @bike, notice: 'Checkout Success' }
+      else
+        format.html { render :show }
+      end
+    end
   end
 
   def drop
+    respond_to do |format|
+      if @bike.drop
+        format.html { redirect_to @bike, notice: 'Drop off Success' }
+      else
+        format.html { render :show }
+      end
+    end
   end
 
   # DELETE /bikes/1
