@@ -10,7 +10,7 @@
   <%= @bike.unlock_code %>
 </p>
 
-<%= link_to 'Grab', grab_bike_path(@bike), method: :put %>
+<%= link_to 'Rent', new_bike_rental_path(@bike) %>
 <%= link_to 'Drop', drop_bike_path(@bike), method: :put %>
 <%= link_to 'Edit', edit_bike_path(@bike) %> |
 <%= link_to 'Back', bikes_path %>

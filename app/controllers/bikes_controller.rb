@@ -51,7 +51,7 @@ class BikesController < ApplicationController
     end
   end
 
-  def grab
+  def rent
     respond_to do |format|
       if @bike.grab
         format.html { redirect_to @bike, notice: 'Checkout Success' }

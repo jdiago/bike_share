@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :bikes do
+    resources :rentals
     member do
-      put 'grab'
       put 'drop'
     end
   end
-
   resources :users
   root 'bikes#index'
 

@@ -1,0 +1,23 @@
+<h1>Listing rentals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Bike</th>
+      <th>Rented on</th>
+      <th>Returned on</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rentals.each do |rental| %>
+      <tr>
+        <td><%= rental.user.email %></td>
+        <td><%= rental.bike.id %></td>
+        <td><%= rental.created_at %></td>
+        <td><%= rental.drop_off_date %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
